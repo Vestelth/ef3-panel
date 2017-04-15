@@ -1,0 +1,70 @@
+// main: main.scss
+
+// VARIABLES
+
+// -------- COLORS ---------
+// header
+$head-bg-color    : #13bdd2;
+$head-font-color  : #ffffff;
+// header nav
+$nav-hover-color  : #4ecede;
+$nav-border-color : #4ecede;
+$nav-active-color : #000000;
+
+// other
+$counter-bg-color : #e81c7b;
+$switch-on-color  : #01cc01;
+
+// main background
+$main-bg-color    : #d9dada;
+
+
+// ---------- SIZES ----------
+// header icons
+$panel-icon-mobile  : 30px;
+$panel-icon-desktop : 20px;
+
+// height
+$head-mobile-h  : 80px; // 160px; 240px;
+$head-tablet-h  : 120px;
+$head-desktop-h : 160px;
+
+// width
+$head-mobile-w  : 80px; // 120px; 160px;
+$head-tablet-w  : 120px;
+$head-desktop-w : 160px;
+
+
+// ----------- MIXINS -----------
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// --------- ANIMATIONS ---------
+// kręci lepiej niż w appce mBanku!:)
+@keyframes rotate {
+  0%{ transform: rotate(0) }
+  100% { transform: rotate(360deg) }
+}
+@mixin rotateAnimation {
+  animation-name: rotate;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 2;
+  animation-direction: alternate;
+}
+
+@keyframes scale {
+  0% { transform: scale(1) }
+  100% { transform: scale(1.15) }
+}
+@mixin scaleAnimation {
+  animation-name: scale;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}

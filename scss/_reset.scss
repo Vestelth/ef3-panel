@@ -1,0 +1,33 @@
+// main: main.scss
+@import 'variables';
+
+/* ------ CSS RESET ------*/
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 10px;
+  line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+  background-color: $main-bg-color;
+}
+
+/* ------ BOOTSTRAP RESET ------ */;
+div.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+div[class*='col-'] {
+  min-height: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+div.container {}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" href="img/logo.png">
+
+    <!-- JQUERY -->
+    <script src="js/jquery.js"></script>
+
+    <!-- BOOTSTRAP -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="scss/main.css">
+
+    <title>EFI3 PANEL</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" role="navigation">
+
+            <div class="navbar-header">
+                <div class="logo">
+                    <a class="navbar-brand" href="#">
+                        <img class="logo" src="img/logo.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="user-photo" data-user="photo">
+                    <a class="navbar-user" href="#">
+                        <img class="user" src="img/user.png" alt="Logo">
+                    </a>
+                </div>
+
+                <div class="user-panel">
+                  <div class="user-name">
+                      Kot Gburczyk
+                  </div>
+                  <nav id="user-panel-nav">
+                      <ul class="user-panel-ul">
+                          <li class="user-panel-item">
+                            <a href="#" class="user-msg">
+                      			  <span id="msg-counter" class="msg-amount" data-id="">
+                      				  <span data-unreadmsg="2">2</span>
+                      			  </span>
+                      		   </a>
+                          </li>
+                          <li class="user-panel-item">
+                            <a href="#" class="user-settings" title="">
+                              <span class="header-icon">
+                              </span>
+                            </a>
+                          </li>
+                      </ul>
+                  </nav>
+                </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse row" id="navbar">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a class="nav-link" href="#"><img src="img/home.png" alt="home icon">
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#"><img src="img/analyse.png" alt="analyse icon">
+                            <p>Analyse</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#"><img src="img/plan.png" alt="plan icon">
+                            <p>Plan</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#"><img src="img/earn.png" alt="earn icon">
+                            <p>Earn</p>
+                        </a>
+                    </li>
+                    <div class="logout" id="logout">
+                          <img class="search" src="img/search.png" alt="earn icon" />
+                          <img class="separator" src="img/separator.png" alt="separator" />
+                          <img class="poweroff" src="img/logout.png" alt="earn icon" />
+                    </div>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+      </div>
+    </main>
+
+
+    <footer>
+
+    </footer>
+
+    <script src="js/app.js" charset="utf-8"></script>
+
+</body>
+
+</html>

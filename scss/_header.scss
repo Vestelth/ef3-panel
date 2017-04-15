@@ -1,0 +1,226 @@
+// main: main.scss
+@import 'variables';
+
+/* ------------ HEADER ------------ */
+header {
+  width: 100%;
+  min-height: $head-mobile-h;
+  background-color: $head-bg-color;
+  color: $head-font-color;
+}
+
+// HEADER NAV
+.navbar-header, nav.navbar {
+  min-height: inherit;
+  border: 0;
+}
+
+nav.navbar {
+  @include flex;
+  flex-direction: column;
+}
+
+.navbar-header {
+  margin: 3px 3px;
+
+  @include flex;
+  align-items: center;
+
+  // ------ BURGER ------
+  button.navbar-toggle {
+    width: $head-mobile-w * 0.7;
+    height: $head-mobile-h * 0.7;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: black;
+    opacity: 0.45;
+
+    .icon-bar {
+        height: 2px;
+        width: auto;
+        margin: 7px auto;
+        display: block;
+        background-color: $head-font-color;
+    }
+  }
+} // ------ end of .navbar-header ------ //
+
+
+// -------- LOGO and USER PHOTO --------
+div.logo, div.user-photo {
+  min-height: inherit;
+  border-radius: 4px;
+}
+
+div.logo {
+  border: 1px solid $nav-border-color;
+}
+
+// --------- LOGO and USER-PANEL ---------
+div.user-photo, div.user-panel {
+  margin-left: 2px;
+}
+
+a.navbar-brand, a.navbar-user {
+  display: inline-block;
+  max-width: $head-mobile-w;
+}
+
+img.logo,  img.user {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+img.user {
+  border-radius: 4px;
+}
+
+div.user-panel {
+  width: $head-mobile-w * 2;
+  min-height: inherit;
+  padding: 0.5em 0 0.5em 0;
+  @include flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  div.user-name {
+    margin-left: 0.8em;
+    font-size: 2.1em;
+    display: block;
+  }
+}
+
+// ------ USER PANEL ICONS ------
+ul.user-panel-ul {
+  list-style-type: none;
+  margin-left: -2em;
+
+  li.user-panel-item {
+    float: left;
+    width: $panel-icon-mobile;
+    height: $panel-icon-mobile;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:first-child {
+      background-image: url(../img/msg.png);
+    }
+    &:last-child {
+      background-image: url(../img/gear.png);
+      margin-left: 2em;
+    }
+
+    // hover animations
+    &:first-child:hover {
+      @include scaleAnimation;
+    }
+    &:last-child:hover {
+      @include rotateAnimation;
+    }
+  }
+}
+
+.user-panel-item a {
+    position: relative;
+    display: block;
+    color: $head-font-color;
+    text-decoration: none;
+}
+
+// ------ MESSAGE COUNTER ------
+span#msg-counter {
+  width: 2em; height: 2em;
+  position: absolute;
+  top: -5px; left: 20px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: $counter-bg-color;
+
+  span {
+    position: relative;
+    top: 3px;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+}
+
+
+// --------- NAVIGATION LIST --------- //
+ul.nav {
+  background-color: $head-bg-color;
+
+  li {
+    margin-left: 0;
+    width: $head-mobile-w;
+    color: $head-font-color;
+    position: relative;
+
+    a {
+      height: 11.5em;
+      color: $head-font-color;
+      border-radius: 0;
+      padding: 0;
+
+      @include flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &:focus {
+        background-color: transparent;
+      }
+
+      img {
+        width: 40%;
+        height: auto;
+
+        &:hover {
+          transform: scale(1.15);
+        }
+      }
+
+      p {
+        margin-top: 1.4em;
+        font-size: 1.2em;
+        text-transform: uppercase;
+      }
+    }
+  }
+} /* ------ end of ul.nav ------ */
+
+.nav>li.active>a {
+  background-color: $nav-active-color;
+  &:focus {
+    background-color: transparent;
+  }
+}
+.nav>li>a:hover, .nav>li.active>a:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+div.logout {
+  height: 11.5em;
+  width: $head-mobile-w;
+  float: right;
+  @include flex;
+  align-items: center;
+  justify-content: space-between;
+
+  img {
+    height: inherit;
+    width: auto;
+    display: block;
+    cursor: pointer;
+  }
+  img.search, img.poweroff {
+    width: 40%;
+    height: auto;
+  }
+  img.separator {
+    display: inline-block;
+    height: 60%;
+    width: auto;
+  }
+}
