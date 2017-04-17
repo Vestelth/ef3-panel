@@ -11,13 +11,21 @@ main .finance-stream [class*=col-] {
   @include flex;
   flex-wrap: wrap;
   margin-bottom: 3em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .finance-stream .balance,
+main .finance-stream .funds,
+main .finance-stream .payments {
+  align-items: flex-start;
 }
 
 // .container-fluid {
 // }
 
 // ALIGNMENTS
-.row {
+.finance-stream-row {
   @include flex;
   flex-wrap: wrap;
   align-items: center;
@@ -80,43 +88,27 @@ div.bank, div.payment, div.switch {
     background-color: $switch-on-color;
   }
   h3.off {
-    // margin-left: 5px;
     padding: 8px;
   }
 }
 
 /* ------ PRODUCTS AND HISTORY ------ */
-.products-and-history {
-  border: 1px solid black;
 
-  .container-fluid {
-    border: 1px solid green;
-
-    .row {
-      border: 1px solid blue;
-
-      [class*=col-] {
-        border: 1px dashed red;
-        div {
-          border: 1px dotted magenta;
-        }
-        nav {
-          border: 1px solid purple;
-
-          ul {
-            border: 2px dashed lightgreen;
-          }
-        }
-      }
-    }
-  }
+.product-row, .history-row {
+  @include flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
-section.product-wrapper {
+
+.product-wrapper {
 
   .product {
     height: 10em;
+    margin-bottom: 1em;
+
     background-color: $item-bg-color;
+    border-radius: 4px;
     @include flex;
     align-items: center;
 
@@ -124,6 +116,7 @@ section.product-wrapper {
       margin-left: 1.4em;
       height: 3.8em;
       display: inline-block;
+      position: relative;
 
     }
     .description {
@@ -137,4 +130,65 @@ section.product-wrapper {
     background-color: $head-bg-color;
   }
 
+  span.counter {
+      width: 1.5em; height: 1.5em;
+      position: absolute;
+      top: 2.2em; left: 3.4em;
+      padding-top: 4px;
+      padding-left: 1px;
+      border-radius: 50%;
+      text-align: center;
+      background-color: $counter-bg-color;
+      color: #ffffff;
+      font-family: 'RobotoCondensedB';
+      font-size: 1.2em;
+  }
+
 }
+
+nav.history {
+  max-height: 40em;
+  margin-left: 1em;
+  border-radius: 5px;
+  border: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  ul {
+    list-style: none;
+    margin-bottom: 0;
+
+    li {
+      background-color: $item-bg-color;
+      margin-bottom: 1px;
+    }
+  }
+}
+
+nav.history ul li {
+  @include flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.2em 2.2em;
+
+  h3 {
+    line-height: 1.4em;
+  }
+  h3.ammount {
+    margin-left: auto;
+    font-family: 'RobotoCondensedB';
+  }
+
+  div.transaction {
+    margin-left: 1.6em;
+  }
+
+  span.glyphicon {
+    margin-left: 0.6em;
+    color: $head-bg-color;
+  }
+
+
+}
+
+// hover: background-color: rgba(0, 0, 0, 0.45);

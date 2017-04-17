@@ -134,19 +134,15 @@ ul.user-panel-ul {
 
 // ------ MESSAGE COUNTER ------
 span#msg-counter {
-  width: 2em; height: 2em;
+  width: 1.4em; height: 1.4em;
   position: absolute;
   top: -5px; left: 20px;
+  padding-top: 4px;
   border-radius: 50%;
   text-align: center;
   background-color: $counter-bg-color;
-
-  span {
-    position: relative;
-    top: 3px;
-    font-size: 1.4em;
-    font-weight: 600;
-  }
+  font-size: 1.4em;
+  font-weight: 600;
 }
 
 
@@ -193,13 +189,11 @@ ul.nav {
   }
 } /* ------ end of ul.nav ------ */
 
-.nav>li.active>a {
-  background-color: $nav-active-color;
-  &:focus {
-    background-color: transparent;
-  }
-}
 .nav>li>a:hover, .nav>li.active>a:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.nav>li>a:visited, .nav>li.active>a:visited {
   background-color: rgba(0, 0, 0, 0.45);
 }
 

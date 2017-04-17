@@ -17,7 +17,9 @@ html { box-sizing: border-box; }
 
 *, *:before, *:after { box-sizing: inherit; }
 
-body { font-family: 'RobotoCondensedL'; font-size: 10px; font-weight: 600; line-height: 1.2em; margin: 0; padding: 0; background-color: #d9dada; }
+body { font-family: 'RobotoCondensedL', verdana, times; font-size: 10px; font-weight: 600; line-height: 1.2em; margin: 0; padding: 0; background-color: #d9dada; }
+
+main { padding: 0 2.5em; }
 
 /* ------ GLOBAL STYLES ------ */
 h1 { font-size: 3.8em; }
@@ -34,6 +36,20 @@ div.row { margin-right: 0; margin-left: 0; }
 [class*='col-'] { min-height: 0; padding: 0 0; }
 
 .container-fluid { margin: 0; padding: 0; }
+
+::-webkit-scrollbar-button { display: none; height: 13px; background-color: #AAA; }
+
+::-webkit-scrollbar-button:hover { background-color: #AAA; }
+
+::-webkit-scrollbar-thumb { background-color: #c9c9c9; border-radius: 4px; }
+
+::-webkit-scrollbar-thumb:hover { background-color: #b8b8b8; }
+
+::-webkit-scrollbar-track { background-color: transparent; border-radius: 4px; }
+
+::-webkit-scrollbar-track:hover { background-color: 0, 0, 0, 0.2; border-radius: 4px; }
+
+::-webkit-scrollbar { width: 8px; }
 
 @font-face { font-family: 'RobotoCondensed'; src: url("../fonts/RobotoCondensed-Regular.ttf"); }
 
@@ -102,9 +118,7 @@ ul.user-panel-ul li.user-panel-item:last-child:hover { animation-name: rotate; a
 
 .user-panel-item a { position: relative; display: block; color: #ffffff; text-decoration: none; }
 
-span#msg-counter { width: 2em; height: 2em; position: absolute; top: -5px; left: 20px; border-radius: 50%; text-align: center; background-color: #e81c7b; }
-
-span#msg-counter span { position: relative; top: 3px; font-size: 1.4em; font-weight: 600; }
+span#msg-counter { width: 1.4em; height: 1.4em; position: absolute; top: -5px; left: 20px; padding-top: 4px; border-radius: 50%; text-align: center; background-color: #e81c7b; font-size: 1.4em; font-weight: 600; }
 
 ul.nav { background-color: #13bdd2; }
 
@@ -121,11 +135,9 @@ ul.nav li a img:hover { transform: scale(1.15); }
 ul.nav li a p { margin-top: 1.4em; font-size: 1.2em; text-transform: uppercase; }
 
 /* ------ end of ul.nav ------ */
-.nav > li.active > a { background-color: #000000; }
-
-.nav > li.active > a:focus { background-color: transparent; }
-
 .nav > li > a:hover, .nav > li.active > a:hover { background-color: rgba(0, 0, 0, 0.45); }
+
+.nav > li > a:visited, .nav > li.active > a:visited { background-color: rgba(0, 0, 0, 0.45); }
 
 div.logout { height: 11.5em; margin-left: -1em; width: 80px; float: right; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: center; justify-content: space-between; }
 
@@ -152,11 +164,13 @@ div.logout img.separator { display: inline-block; height: 60%; width: auto; }
 main section { margin-bottom: 3em; }
 
 /* ------ FINANCE LIFE STREAM ------ */
-main .finance-stream [class*=col-] { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; margin-bottom: 3em; }
+main .finance-stream [class*=col-] { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; margin-bottom: 3em; justify-content: space-between; align-items: center; }
 
-.row { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; align-items: center; }
+main .finance-stream .balance, main .finance-stream .funds, main .finance-stream .payments { align-items: flex-start; }
 
-.row .buttons, .row .chart-toggle { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; }
+.finance-stream-row { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; align-items: center; }
+
+.finance-stream-row .buttons, .finance-stream-row .chart-toggle { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; }
 
 .buttons h3, .chart-toggle h3 { font-size: 2em; }
 
@@ -177,27 +191,33 @@ div.bank, div.payment, div.switch { display: inline-block; font-weight: 300; wid
 .switch h3.off { padding: 8px; }
 
 /* ------ PRODUCTS AND HISTORY ------ */
-.products-and-history { border: 1px solid black; }
+.product-row, .history-row { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; justify-content: flex-start; }
 
-.products-and-history .container-fluid { border: 1px solid green; }
+.product-wrapper .product { height: 10em; margin-bottom: 1em; background-color: #ffffff; border-radius: 4px; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: center; }
 
-.products-and-history .container-fluid .row { border: 1px solid blue; }
+.product-wrapper .product img, .product-wrapper .product .description { margin-left: 1.4em; height: 3.8em; display: inline-block; position: relative; }
 
-.products-and-history .container-fluid .row [class*=col-] { border: 1px dashed red; }
+.product-wrapper .product .description { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: center; flex-direction: column; }
 
-.products-and-history .container-fluid .row [class*=col-] div { border: 1px dotted magenta; }
+.product-wrapper .product.loans { background-color: #13bdd2; }
 
-.products-and-history .container-fluid .row [class*=col-] nav { border: 1px solid purple; }
+.product-wrapper span.counter { width: 1.5em; height: 1.5em; position: absolute; top: 2.2em; left: 3.4em; padding-top: 4px; padding-left: 1px; border-radius: 50%; text-align: center; background-color: #e81c7b; color: #ffffff; font-family: 'RobotoCondensedB'; font-size: 1.2em; }
 
-.products-and-history .container-fluid .row [class*=col-] nav ul { border: 2px dashed lightgreen; }
+nav.history { max-height: 40em; margin-left: 1em; border-radius: 5px; border: 0; overflow-y: scroll; overflow-x: hidden; }
 
-section.product-wrapper .product { height: 10em; background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: center; }
+nav.history ul { list-style: none; margin-bottom: 0; }
 
-section.product-wrapper .product img, section.product-wrapper .product .description { margin-left: 1.4em; height: 3.8em; display: inline-block; }
+nav.history ul li { background-color: #ffffff; margin-bottom: 1px; }
 
-section.product-wrapper .product .description { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: center; flex-direction: column; }
+nav.history ul li { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-direction: row; align-items: center; padding: 1.2em 2.2em; }
 
-section.product-wrapper .product.loans { background-color: #13bdd2; }
+nav.history ul li h3 { line-height: 1.4em; }
+
+nav.history ul li h3.ammount { margin-left: auto; font-family: 'RobotoCondensedB'; }
+
+nav.history ul li div.transaction { margin-left: 1.6em; }
+
+nav.history ul li span.glyphicon { margin-left: 0.6em; color: #13bdd2; }
 
 @media only screen and (max-width: 900px) { #navbar { position: absolute; top: 8.5em; width: 100%; background-color: #13bdd2; z-index: 10; }
   .navbar-header { float: none; }
@@ -217,15 +237,15 @@ section.product-wrapper .product.loans { background-color: #13bdd2; }
   .row .buttons, .row .chart-toggle { justify-content: flex-end; }
   .row .buttons > h3, .row .chart-toggle > h3 { margin-right: 10%; } }
 
-@media only screen and (min-width: 900px) { header, main { padding: 0 2.5em; }
+@media only screen and (min-width: 900px) { header { padding: 0 2.5em; }
   nav.navbar { flex-direction: row; }
   nav.navbar .navbar-collapse { margin-left: 8.3%; }
   div.logout { position: absolute; right: 0; }
   #user-panel-nav li { width: 20px; height: 20px; }
-  span#msg-counter { width: 1.6em; height: 1.6em; top: -5px; left: 15px; }
-  span#msg-counter span { top: 2px; font-size: 1.2em; } }
+  span#msg-counter { width: 1.2em; height: 1.2em; top: -4px; left: 15px; padding-top: 2px; font-size: 1.2em; }
+  .product { margin-right: 1em; } }
 
-@media only screen and (max-width: 400px) { .user-panel { font-size: 10px; line-height: 1.6em; }
+@media only screen and (max-width: 400px) { main { padding: 0 0em; }
+  .user-panel { font-size: 10px; line-height: 1.6em; }
   #user-panel-nav .user-panel-item { height: 21px; width: 21px; }
-  span#msg-counter { width: 1.6em; height: 1.6em; left: 14px; }
-  span#msg-counter span { font-size: 1.2em; top: 1px; } }
+  span#msg-counter { width: 1.2em; height: 1.2em; top: -4px; left: 15px; padding-top: 0px; font-size: 1.2em; } }
