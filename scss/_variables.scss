@@ -17,7 +17,21 @@ $switch-on-color  : #01cc01;
 
 // main background
 $main-bg-color    : #d9dada;
+$item-bg-color    : #ffffff;
 
+// ------ FONTS ------
+@font-face {
+    font-family: 'RobotoCondensed';
+    src: url('../fonts/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'RobotoCondensedL';
+    src: url('../fonts/RobotoCondensed-Light.ttf');
+}
+@font-face {
+    font-family: 'RobotoCondensedB';
+    src: url('../fonts/RobotoCondensed-Bold.ttf');
+}
 
 // ---------- SIZES ----------
 // header icons
@@ -53,7 +67,7 @@ $head-desktop-w : 160px;
   animation-name: rotate;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: 2;
+  animation-iteration-count: 1;
   animation-direction: alternate;
 }
 

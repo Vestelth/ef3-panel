@@ -1,0 +1,140 @@
+// main: main.scss
+@import 'variables';
+
+main section {
+  margin-bottom: 3em;
+}
+
+/* ------ FINANCE LIFE STREAM ------ */
+// COLUMN FLEX
+main .finance-stream [class*=col-] {
+  @include flex;
+  flex-wrap: wrap;
+  margin-bottom: 3em;
+}
+
+// .container-fluid {
+// }
+
+// ALIGNMENTS
+.row {
+  @include flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .buttons, .chart-toggle {
+    @include flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.buttons h3, .chart-toggle h3 {
+  font-size: 2em;
+}
+
+.balance, .funds, .payments {
+  @include flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h2.ammount {
+    font-family: 'RobotoCondensedB';
+    margin-right: 4px; //TODO: MEDIA QUERIES!
+  }
+}
+
+// ALL BUTTONS VISUALS
+div.bank, div.payment, div.switch {
+  display: inline-block;
+  font-weight: 300;
+  width: 5.8em;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.bank, .payment {
+  padding: 8px 0 8px 0;
+  margin-left: 0.2em;
+  background-color: $head-bg-color;
+}
+
+.switch {
+  background-color: #ffffff;
+  padding: 2px 0;
+
+  h3 {
+    display: inline-block;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  h3.on {
+    margin-left: 5px;
+    padding: 8px 10px;
+    background-color: $switch-on-color;
+  }
+  h3.off {
+    // margin-left: 5px;
+    padding: 8px;
+  }
+}
+
+/* ------ PRODUCTS AND HISTORY ------ */
+.products-and-history {
+  border: 1px solid black;
+
+  .container-fluid {
+    border: 1px solid green;
+
+    .row {
+      border: 1px solid blue;
+
+      [class*=col-] {
+        border: 1px dashed red;
+        div {
+          border: 1px dotted magenta;
+        }
+        nav {
+          border: 1px solid purple;
+
+          ul {
+            border: 2px dashed lightgreen;
+          }
+        }
+      }
+    }
+  }
+}
+
+section.product-wrapper {
+
+  .product {
+    height: 10em;
+    background-color: $item-bg-color;
+    @include flex;
+    align-items: center;
+
+    img, .description {
+      margin-left: 1.4em;
+      height: 3.8em;
+      display: inline-block;
+
+    }
+    .description {
+      @include flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  .product.loans {
+    background-color: $head-bg-color;
+  }
+
+}

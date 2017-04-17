@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <nav class="navbar" role="navigation">
+        <nav class="navbar fixed navbar-static-top" role="navigation">
 
             <div class="navbar-header">
                 <div class="logo">
@@ -35,7 +35,6 @@
                         <img class="user" src="img/user.png" alt="Logo">
                     </a>
                 </div>
-
                 <div class="user-panel">
                   <div class="user-name">
                       Kot Gburczyk
@@ -56,16 +55,16 @@
                             </a>
                           </li>
                       </ul>
-                  </nav>
-                </div>
+                  </nav> <!-- .user-panel-nav end -->
+                </div>   <!-- .user-panel end -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div> <!-- navbar-header end -->
 
-            <div class="collapse navbar-collapse row" id="navbar">
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="nav nav-pills">
                     <li class="active">
                         <a class="nav-link" href="#"><img src="img/home.png" alt="home icon">
@@ -92,24 +91,150 @@
                           <img class="separator" src="img/separator.png" alt="separator" />
                           <img class="poweroff" src="img/logout.png" alt="earn icon" />
                     </div>
-                </ul>
-            </div>
-        </nav>
+                </ul> <!-- ul.nav end -->
+            </div> <!-- .navbar-collapse end -->
+        </nav> <!-- .navbar end -->
     </header>
 
     <main>
-      <div class="container">
-        
-      </div>
-    </main>
+      <section class="finance-stream">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-sm-8">
+              <h1 class="title">
+                Finance life stream
+              </h1>
+            </div>
+            <aside class="buttons col-xs-12 col-sm-4">
+              <h3>Add</h3>
+              <div class="button-wrapper">
+                <div class="bank btn-primary">
+                  Bank
+                </div>
+                <div class="payment btn-primary">
+                  Payment
+                </div>
+              </div>
+            </aside>
+          </div> <!-- .row end -->
+          <div class="row">
+            <div class="balance col-xs-12 col-sm-2">
+              <h2>Balance</h2>
+              <h2 class="ammount">
+                7&nbsp;200,34<span>&nbsp;PLN</span>
+              </h2>
+            </div>
+            <div class="funds col-xs-12 col-sm-3">
+              <h2>Available funds</h2>
+              <h2 class="ammount">
+                7&nbsp;200,34<span>&nbsp;PLN</span>
+              </h2>
+            </div>
+            <div class="payments col-xs-12 col-sm-3">
+              <h2>Sheduled payments</h2>
+              <h2 class="ammount">
+                2&nbsp;200,34<span>&nbsp;PLN</span>
+              </h2>
+            </div>
+            <div class="chart-toggle col-xs-12 col-sm-4">
+              <h3>Account analysis</h3>
+              <div class="switch">
+                <h3 class="off">OFF</h3>
+                <h3 class="on active">ON</h3>
+              </div>
+            </div>
+          </div> <!-- .row end -->
+        </div> <!-- .container-fluid end -->
+      </section>
+      <section class="graph">
+        <canvas id="canvas" width="300" height="300"></canvas>
+      </section> <!-- .graph end  -->
 
+      <section class="products-and-history">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="product-wrapper col-xs-12 col-sm-6">
+              <div class="row"> <!-- product first row -->
+                  <div class="product col-md-6 col-xs-12">
+                    <img src="img/wallet.png" alt="wallet icon">
+                    <div class="description">
+                      <h3>Wallets<span>[3]</span></h3>
+                      <h3>500,00 <span>PLN</span></h3>
+                    </div>
+                  </div>
+                  <div class="product col-md-6 col-xs-12">
+                    <img src="img/savings.png" alt="deposits icon">
+                    <div class="description">
+                      <h3>Deposits<span>[3]</span></h3>
+                      <h3>500,00 <span>PLN</span></h3>
+                    </div>
+                  </div>
+              </div> <!-- end product first row -->
+              <div class="row"> <!-- product second row -->
+                  <div class="product col-md-6 col-xs-12">
+                    <img src="img/book.png" alt="accounts icon">
+                    <div class="description">
+                      <h3>Accounts<span>[3]</span></h3>
+                      <h3>500,00 <span>PLN</span></h3>
+                    </div>
+                  </div>
+                  <div class="product col-md-6 col-xs-12">
+                    <img src="img/chart.png" alt="funds icon">
+                    <div class="description">
+                      <h3>Funds<span>[3]</span></h3>
+                      <h3>500,00 <span>PLN</span></h3>
+                    </div>
+                  </div>
+              </div> <!-- end product second row -->
+                  <div class="row"> <!-- product third row -->
+                    <div class="product loans col-md-6 col-xs-12">
+                      <img src="img/thumbup.png" alt="bank loans icon">
+                      <div class="description">
+                        <h3>Bank loans<span>[3]</span></h3>
+                        <h3>-127 000,00 <span>PLN</span></h3>
+                      </div>
+                    </div>
+              </div> <!-- end product third row -->
+            </div> <!-- end of product-wrapper -->
+            <div class="col-sm-6 col-xs-12">
+              <nav class="history">
+                <ul class="transaction-list">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+              </nav>
+            </div>
+          </div>     <!-- .row end -->
+        </div>     <!-- .container-fluid end -->
+      </section> <!-- .products-and-history end -->
+    </main>
 
     <footer>
 
     </footer>
 
-    <script src="js/app.js" charset="utf-8"></script>
-
+    <script src="js/app.js"></script>
 </body>
 
 </html>
+
+<!-- TODO:
+  - 3rd SECTION!
+  - BEFORY i AFTERY:
+      NAVBAR, 3rd SECTION
+  - HOVER UNDERLINE:
+      WIDOK MOBILNY, 1ST SECTION
+  - WYKRES + KOLORY + TOOLTIPY
+  - DATASETY
+  - ACCESSIBILITY
+-->

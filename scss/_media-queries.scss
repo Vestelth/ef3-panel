@@ -1,7 +1,15 @@
 // main: main.scss
 
 // BOOTSTRAP COLLAPSE BREAKPOINT CHANGE
-@media only screen and (max-width: 955px) {
+@media only screen and (max-width: 900px) {
+    #navbar {
+        position: absolute;
+        top: 8.5em;
+        width: 100%;
+        background-color: $head-bg-color;
+        z-index: 10;
+    }
+
     .navbar-header {
         float: none;
     }
@@ -39,12 +47,39 @@
 }
 
 // MEDIA BREAKPOINTS
-@media only screen and (min-width: 955px) {
+@media only screen and (min-width: 768px){
+  .nav {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .balance, .funds, .payments {
+    flex-direction: column;
+  }
+  .funds {
+    margin-left: 2.5%;
+    margin-right: -2.5%;
+  }
+  .row {
+    .buttons, .chart-toggle {
+      justify-content: flex-end;
+
+      >h3{
+        margin-right: 10%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  header, main {
+    padding: 0 2.5em;
+  }
+
   nav.navbar {
     flex-direction: row;
 
     .navbar-collapse {
-      margin-left: 8.33%;
+      margin-left: 8.3%;
     }
   }
 
@@ -60,7 +95,7 @@
   span#msg-counter {
     width: 1.6em; height: 1.6em;
     top: -5px; left: 15px;
-    
+
     span {
       top: 2px;
       font-size: 1.2em;
@@ -68,8 +103,23 @@
   }
 }
 
-@media only screen and (min-width: 955px) {
-  header {
-    padding: 0 5%;
+@media only screen and (max-width: 400px) {
+  .user-panel {
+    font-size: 10px;
+    line-height: 1.6em;
   }
+  #user-panel-nav .user-panel-item{
+    height: $panel-icon-mobile * 0.7;
+    width: $panel-icon-mobile * 0.7;
+  }
+  span#msg-counter {
+    width: 1.6em; height: 1.6em;
+    left: 14px;
+
+    span {
+      font-size: 1.2em;
+      top: 1px;
+    }
+  }
+
 }

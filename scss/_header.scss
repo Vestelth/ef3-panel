@@ -18,6 +18,7 @@ header {
 nav.navbar {
   @include flex;
   flex-direction: column;
+  margin-bottom: 4em;
 }
 
 .navbar-header {
@@ -79,14 +80,14 @@ img.user {
 div.user-panel {
   width: $head-mobile-w * 2;
   min-height: inherit;
-  padding: 0.5em 0 0.5em 0;
+  padding: 8px;
   @include flex;
   flex-direction: column;
   justify-content: space-between;
 
   div.user-name {
-    margin-left: 0.8em;
     font-size: 2.1em;
+    font-weight: 300;
     display: block;
   }
 }
@@ -94,9 +95,9 @@ div.user-panel {
 // ------ USER PANEL ICONS ------
 ul.user-panel-ul {
   list-style-type: none;
-  margin-left: -2em;
 
   li.user-panel-item {
+    margin-bottom: -0.6em;
     float: left;
     width: $panel-icon-mobile;
     height: $panel-icon-mobile;
@@ -106,9 +107,11 @@ ul.user-panel-ul {
 
     &:first-child {
       background-image: url(../img/msg.png);
+      background-size: cover;
     }
     &:last-child {
       background-image: url(../img/gear.png);
+      background-size: cover;
       margin-left: 2em;
     }
 
@@ -202,6 +205,7 @@ ul.nav {
 
 div.logout {
   height: 11.5em;
+  margin-left: -1em;
   width: $head-mobile-w;
   float: right;
   @include flex;
@@ -213,6 +217,10 @@ div.logout {
     width: auto;
     display: block;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
   img.search, img.poweroff {
     width: 40%;
