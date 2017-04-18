@@ -1,0 +1,23 @@
+{
+  "name": "ef3-panel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chart.js": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vestelth/ef3-panel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vestelth/ef3-panel/issues"
+  },
+  "homepage": "https://github.com/Vestelth/ef3-panel#readme"
+}

@@ -59,3 +59,8 @@ div.row {
 
 ::-webkit-scrollbar-button{ display: none; height: 13px; background-color: #AAA; } ::-webkit-scrollbar-button:hover{ background-color: #AAA; } ::-webkit-scrollbar-thumb{ background-color: #c9c9c9; border-radius: 4px; } ::-webkit-scrollbar-thumb:hover{ background-color: #b8b8b8; } ::-webkit-scrollbar-track{ background-color: rgba(0, 0, 0, 0); border-radius: 4px; }
 ::-webkit-scrollbar-track:hover{ background-color: (0, 0, 0, 0.2); border-radius: 4px; } ::-webkit-scrollbar{ width: 8px; }
+
+// invisibility
+.invisible {
+  display: none;
+}

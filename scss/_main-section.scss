@@ -39,6 +39,10 @@ main .finance-stream .payments {
   }
 }
 
+.btn-primary:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
 .buttons h3, .chart-toggle h3 {
   font-size: 2em;
 }
@@ -73,32 +77,54 @@ div.bank, div.payment, div.switch {
   background-color: $head-bg-color;
 }
 
+.loans-row {
+  margin-bottom: 3em;
+}
+
 .switch {
   background-color: #ffffff;
   padding: 2px 0;
+  position: relative;
 
   h3 {
     display: inline-block;
     border-radius: 3px;
     font-size: 16px;
+    padding: 8px;
+    z-index: 10;
   }
-  h3.on {
+
+  span.switcher {
+    width: 2.4em;
+    height: 2.1em;
+    position: absolute;
+    top: 2px; right: 2px;
+    display: block;
+    z-index: 0;
+    border-radius: 4px;
     margin-left: 5px;
     padding: 8px 10px;
     background-color: $switch-on-color;
-  }
-  h3.off {
-    padding: 8px;
   }
 }
 
 /* ------ PRODUCTS AND HISTORY ------ */
 
-.product-row, .history-row {
+.product-row {
   @include flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.product-wrapper h3 {
+  margin-bottom: 8px;
+}
+
+.history-column h3 {
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
 
 
 .product-wrapper {
@@ -143,7 +169,6 @@ div.bank, div.payment, div.switch {
       font-family: 'RobotoCondensedB';
       font-size: 1.2em;
   }
-
 }
 
 nav.history {
@@ -161,6 +186,11 @@ nav.history {
     li {
       background-color: $item-bg-color;
       margin-bottom: 1px;
+      cursor: pointer;
+
+      &:last-child {
+        display: none;
+      }
     }
   }
 }
@@ -186,9 +216,7 @@ nav.history ul li {
   span.glyphicon {
     margin-left: 0.6em;
     color: $head-bg-color;
+    cursor: pointer;
   }
-
-
 }
-
 // hover: background-color: rgba(0, 0, 0, 0.45);

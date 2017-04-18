@@ -51,6 +51,8 @@ div.row { margin-right: 0; margin-left: 0; }
 
 ::-webkit-scrollbar { width: 8px; }
 
+.invisible { display: none; }
+
 @font-face { font-family: 'RobotoCondensed'; src: url("../fonts/RobotoCondensed-Regular.ttf"); }
 
 @font-face { font-family: 'RobotoCondensedL'; src: url("../fonts/RobotoCondensed-Light.ttf"); }
@@ -130,8 +132,6 @@ ul.nav li a:focus { background-color: transparent; }
 
 ul.nav li a img { width: 40%; height: auto; }
 
-ul.nav li a img:hover { transform: scale(1.15); }
-
 ul.nav li a p { margin-top: 1.4em; font-size: 1.2em; text-transform: uppercase; }
 
 /* ------ end of ul.nav ------ */
@@ -148,6 +148,8 @@ div.logout img:hover { transform: scale(1.15); }
 div.logout img.search, div.logout img.poweroff { width: 40%; height: auto; }
 
 div.logout img.separator { display: inline-block; height: 60%; width: auto; }
+
+#lineChart { background-color: #ffffff; border-radius: 4px; }
 
 @font-face { font-family: 'RobotoCondensed'; src: url("../fonts/RobotoCondensed-Regular.ttf"); }
 
@@ -172,6 +174,8 @@ main .finance-stream .balance, main .finance-stream .funds, main .finance-stream
 
 .finance-stream-row .buttons, .finance-stream-row .chart-toggle { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: space-between; }
 
+.btn-primary:hover { background-color: rgba(0, 0, 0, 0.45); }
+
 .buttons h3, .chart-toggle h3 { font-size: 2em; }
 
 .balance, .funds, .payments { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; justify-content: space-between; }
@@ -182,16 +186,20 @@ div.bank, div.payment, div.switch { display: inline-block; font-weight: 300; wid
 
 .bank, .payment { padding: 8px 0 8px 0; margin-left: 0.2em; background-color: #13bdd2; }
 
-.switch { background-color: #ffffff; padding: 2px 0; }
+.loans-row { margin-bottom: 3em; }
 
-.switch h3 { display: inline-block; border-radius: 3px; font-size: 16px; }
+.switch { background-color: #ffffff; padding: 2px 0; position: relative; }
 
-.switch h3.on { margin-left: 5px; padding: 8px 10px; background-color: #01cc01; }
+.switch h3 { display: inline-block; border-radius: 3px; font-size: 16px; padding: 8px; z-index: 10; }
 
-.switch h3.off { padding: 8px; }
+.switch span.switcher { width: 2.4em; height: 2.1em; position: absolute; top: 2px; right: 2px; display: block; z-index: 0; border-radius: 4px; margin-left: 5px; padding: 8px 10px; background-color: #01cc01; }
 
 /* ------ PRODUCTS AND HISTORY ------ */
-.product-row, .history-row { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+.product-row { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-wrap: wrap; justify-content: flex-start; }
+
+.product-wrapper h3 { margin-bottom: 8px; }
+
+.history-column h3 { margin-left: 10px; margin-bottom: 8px; }
 
 .product-wrapper .product { height: 10em; margin-bottom: 1em; background-color: #ffffff; border-radius: 4px; display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; align-items: center; }
 
@@ -207,7 +215,9 @@ nav.history { max-height: 40em; margin-left: 1em; border-radius: 5px; border: 0;
 
 nav.history ul { list-style: none; margin-bottom: 0; }
 
-nav.history ul li { background-color: #ffffff; margin-bottom: 1px; }
+nav.history ul li { background-color: #ffffff; margin-bottom: 1px; cursor: pointer; }
+
+nav.history ul li:last-child { display: none; }
 
 nav.history ul li { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; flex-direction: row; align-items: center; padding: 1.2em 2.2em; }
 
@@ -217,7 +227,7 @@ nav.history ul li h3.ammount { margin-left: auto; font-family: 'RobotoCondensedB
 
 nav.history ul li div.transaction { margin-left: 1.6em; }
 
-nav.history ul li span.glyphicon { margin-left: 0.6em; color: #13bdd2; }
+nav.history ul li span.glyphicon { margin-left: 0.6em; color: #13bdd2; cursor: pointer; }
 
 @media only screen and (max-width: 900px) { #navbar { position: absolute; top: 8.5em; width: 100%; background-color: #13bdd2; z-index: 10; }
   .navbar-header { float: none; }
