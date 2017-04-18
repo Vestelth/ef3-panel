@@ -205,13 +205,13 @@ div.bank, div.payment, div.switch { display: inline-block; font-weight: 300; wid
 
 .product-wrapper .product img, .product-wrapper .product .description { margin-left: 1.4em; height: 3.8em; display: inline-block; position: relative; }
 
-.product-wrapper .product .description { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: center; flex-direction: column; }
+.product-wrapper .product .description { display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: flex; justify-content: flex-start; flex-direction: column; }
 
 .product-wrapper .product.loans { background-color: #13bdd2; }
 
 .product-wrapper span.counter { width: 1.5em; height: 1.5em; position: absolute; top: 2.2em; left: 3.4em; padding-top: 4px; padding-left: 1px; border-radius: 50%; text-align: center; background-color: #e81c7b; color: #ffffff; font-family: 'RobotoCondensedB'; font-size: 1.2em; }
 
-nav.history { max-height: 40em; margin-left: 1em; border-radius: 5px; border: 0; overflow-y: scroll; overflow-x: hidden; }
+nav.history { max-height: 40em; border-radius: 5px; border: 0; overflow-y: scroll; overflow-x: hidden; }
 
 nav.history ul { list-style: none; margin-bottom: 0; }
 
@@ -229,6 +229,8 @@ nav.history ul li div.transaction { margin-left: 1.6em; }
 
 nav.history ul li span.glyphicon { margin-left: 0.6em; color: #13bdd2; cursor: pointer; }
 
+#lineChart { max-height: 45em; }
+
 @media only screen and (max-width: 900px) { #navbar { position: absolute; top: 8.5em; width: 100%; background-color: #13bdd2; z-index: 10; }
   .navbar-header { float: none; }
   .navbar-left, .navbar-right { float: none !important; }
@@ -245,7 +247,8 @@ nav.history ul li span.glyphicon { margin-left: 0.6em; color: #13bdd2; cursor: p
   .balance, .funds, .payments { flex-direction: column; }
   .funds { margin-left: 2.5%; margin-right: -2.5%; }
   .row .buttons, .row .chart-toggle { justify-content: flex-end; }
-  .row .buttons > h3, .row .chart-toggle > h3 { margin-right: 10%; } }
+  .row .buttons > h3, .row .chart-toggle > h3 { margin-right: 10%; }
+  nav.history { margin-left: 1em; } }
 
 @media only screen and (min-width: 900px) { header { padding: 0 2.5em; }
   nav.navbar { flex-direction: row; }

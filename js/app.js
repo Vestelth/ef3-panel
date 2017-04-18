@@ -52,7 +52,19 @@ $(function() {
       }, 400);
       switcher.css('backgroundColor', '#01cc01');
       switcher.toggleClass('on');
-      $('canvas').fadeIn(400);
+      $('canvas').fadeIn(1000);
     }
   });
 });
+
+// color for income numbers
+
+const ammount = $('li h3.ammount');
+
+for (var i = 0; i < ammount.length; i++) {
+  let ammountNum = ammount.eq(i).text();
+
+  if (parseInt(ammountNum) > 0) {
+    ammount.eq(i).css('color','#6eb512');
+  }
+}
