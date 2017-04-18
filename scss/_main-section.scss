@@ -194,6 +194,7 @@ nav.history {
   }
 }
 
+// transaction history items
 nav.history ul li {
   @include flex;
   flex-direction: row;
